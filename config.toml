@@ -1,0 +1,5 @@
+baseURL = "https://iyanuashiri.github.io/"
+languageCode = "en-us"
+title = "IyanuAshiri"
+theme = "ananke"
+publishDir = "docs"
