@@ -1,4 +1,4 @@
-baseURL = "https://iyanuashiri.github.io/"
+baseURL = "http://iyanuashiri.me/"
 languageCode = "en-us"
 title = "IyanuAshiri"
 theme = "ananke"
