@@ -3,3 +3,18 @@ languageCode = "en-us"
 title = "IyanuAshiri"
 theme = "ananke"
 publishDir = "docs"
+
+SectionPagesMenu = "main"
+
+[params]
+  favicon = ""
+  description = "The last theme you'll ever need. Maybe."
+  twitter = "https://twitter.com/IyanuAshiri"
+  instagram = "https://instagram.com/iyanuashiri"
+  github = "https://github.com/iyanuashiri"
+  linkedin = "https://linkedin.com/in/iyanu-ajao"
+  # choose a background color from any on this page: http://tachyons.io/docs/themes/skins/ and preface it with "bg-"
+  background_color_class = "bg-black"
+  featured_image = "/images/gohugo-default-sample-hero-image.jpg"
+  recent_posts_number = 2
+
