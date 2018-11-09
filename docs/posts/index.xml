@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on IyanuAshiri</title>
-    <link>http://iyanuashiri.me/posts/</link>
+    <link>https://iyanuashiri.github.io/posts/</link>
     <description>Recent content in Posts on IyanuAshiri</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 08 Nov 2018 21:24:44 +0100</lastBuildDate>
     
-	<atom:link href="http://iyanuashiri.me/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://iyanuashiri.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Build and Deploy Twitter Bots with Python, Tweepy and PythonAnywhere</title>
-      <link>http://iyanuashiri.me/posts/build-and-deploy-twitter-bots/</link>
+      <link>https://iyanuashiri.github.io/posts/build-and-deploy-twitter-bots/</link>
       <pubDate>Thu, 08 Nov 2018 21:24:44 +0100</pubDate>
       
-      <guid>http://iyanuashiri.me/posts/build-and-deploy-twitter-bots/</guid>
-      <description>A Twilio blog post on how to build Twitter bots using Python, Tweepy and PythonAnywhere. Click Here</description>
+      <guid>https://iyanuashiri.github.io/posts/build-and-deploy-twitter-bots/</guid>
+      <description>A Twilio blog post that I wrote on how to build a Twitter bot using Python, Tweepy and PythonAnywhere. Click Here</description>
     </item>
     
   </channel>
