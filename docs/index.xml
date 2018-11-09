@@ -6,10 +6,20 @@
     <description>Recent content on IyanuAshiri</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 08 Nov 2018 21:24:44 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 09 Nov 2018 04:08:39 +0100</lastBuildDate>
     
 	<atom:link href="http://iyanuashiri.me/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Contact</title>
+      <link>http://iyanuashiri.me/contact/</link>
+      <pubDate>Fri, 09 Nov 2018 04:08:39 +0100</pubDate>
+      
+      <guid>http://iyanuashiri.me/contact/</guid>
+      <description>Have a question? You can ask me anything
+Your Name Email Address An email address is required.  Message   </description>
+    </item>
     
     <item>
       <title>Build and Deploy Twitter Bots with Python, Tweepy and PythonAnywhere</title>
