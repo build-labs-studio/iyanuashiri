@@ -1,10 +1,16 @@
-baseURL = "https://iyanuashiri.github.io/"
+baseURL = "http://iyanuashiri.me/"
 languageCode = "en-us"
 title = "IyanuAshiri"
 theme = "ananke"
 publishDir = "docs"
 
+MetaDataFormat = "yaml"
+DefaultContentLanguage = "en"
 SectionPagesMenu = "main"
+Paginate = 6 # this is set low for demonstrating with dummy content. Set to a higher number
+googleAnalytics = ""
+enableRobotsTXT = true
+disqusShortname = 'disqus_erZSyJHxH2'
 
 [params]
   favicon = ""
@@ -14,7 +20,7 @@ SectionPagesMenu = "main"
   github = "https://github.com/iyanuashiri"
   linkedin = "https://linkedin.com/in/iyanu-ajao"
   # choose a background color from any on this page: http://tachyons.io/docs/themes/skins/ and preface it with "bg-"
-  background_color_class = "bg-black"
+  background_color_class = "bg-green"
   featured_image = "/images/gohugo-default-sample-hero-image.jpg"
-  recent_posts_number = 2
+  recent_posts_number = 5
 
