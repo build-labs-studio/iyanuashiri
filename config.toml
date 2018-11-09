@@ -10,7 +10,7 @@ SectionPagesMenu = "main"
 Paginate = 6 # this is set low for demonstrating with dummy content. Set to a higher number
 googleAnalytics = ""
 enableRobotsTXT = true
-disqusShortname = 'disqus_erZSyJHxH2'
+disqusShortname = iyanuashiri-me
 
 [params]
   favicon = ""
