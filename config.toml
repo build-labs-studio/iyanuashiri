@@ -1,4 +1,4 @@
-baseURL = "http://iyanuashiri.me/"
+baseURL = "https://iyanuashiri.me/"
 languageCode = "en-us"
 title = "IyanuAshiri"
 theme = "ananke"
@@ -8,7 +8,7 @@ MetaDataFormat = "yaml"
 DefaultContentLanguage = "en"
 SectionPagesMenu = "main"
 Paginate = 6 # this is set low for demonstrating with dummy content. Set to a higher number
-googleAnalytics = ""
+googleAnalytics = "UA-130170274-1"
 enableRobotsTXT = true
 disqusShortname = 'iyanuashiri-me'
 
@@ -23,4 +23,5 @@ disqusShortname = 'iyanuashiri-me'
   background_color_class = "bg-green"
   featured_image = "/images/gohugo-default-sample-hero-image.jpg"
   recent_posts_number = 5
+  show_reading_time = true
 
