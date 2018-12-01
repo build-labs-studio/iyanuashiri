@@ -2,41 +2,41 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>IyanuAshiri</title>
-    <link>http://iyanuashiri.me/</link>
+    <link>https://iyanuashiri.me/</link>
     <description>Recent content on IyanuAshiri</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 30 Nov 2018 01:12:32 +0100</lastBuildDate>
     
-	<atom:link href="http://iyanuashiri.me/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://iyanuashiri.me/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Getting Started with Pathlib</title>
-      <link>http://iyanuashiri.me/posts/understanding-paths-in-python/</link>
+      <link>https://iyanuashiri.me/posts/understanding-paths-in-python/</link>
       <pubDate>Fri, 30 Nov 2018 01:12:32 +0100</pubDate>
       
-      <guid>http://iyanuashiri.me/posts/understanding-paths-in-python/</guid>
+      <guid>https://iyanuashiri.me/posts/understanding-paths-in-python/</guid>
       <description>Introduction This tutorial will guide you on how to use the Pathlib module for working with filesystem paths, the benefits, and understand the problem it solves since the Python standard library already contains os.path.
 How is it Better than os.path os.path was the only way to work with filesystem paths, but it had some limitations. To perform certain tasks, you have to import from other standard library modules. For instance, suppose you want to list the files ending with .</description>
     </item>
     
     <item>
       <title>Contact</title>
-      <link>http://iyanuashiri.me/contact/</link>
+      <link>https://iyanuashiri.me/contact/</link>
       <pubDate>Fri, 09 Nov 2018 04:08:39 +0100</pubDate>
       
-      <guid>http://iyanuashiri.me/contact/</guid>
+      <guid>https://iyanuashiri.me/contact/</guid>
       <description>Have a question? You can ask me anything
 Your Name Email Address An email address is required.  Message   </description>
     </item>
     
     <item>
       <title>Build and Deploy Twitter Bots with Python, Tweepy and PythonAnywhere</title>
-      <link>http://iyanuashiri.me/posts/build-and-deploy-twitter-bots/</link>
+      <link>https://iyanuashiri.me/posts/build-and-deploy-twitter-bots/</link>
       <pubDate>Thu, 08 Nov 2018 21:24:44 +0100</pubDate>
       
-      <guid>http://iyanuashiri.me/posts/build-and-deploy-twitter-bots/</guid>
+      <guid>https://iyanuashiri.me/posts/build-and-deploy-twitter-bots/</guid>
       <description>A Twilio blog post that I wrote on how to build a Twitter bot using Python, Tweepy and PythonAnywhere. Click Here</description>
     </item>
     
