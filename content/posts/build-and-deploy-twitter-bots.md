@@ -2,6 +2,9 @@
 title: "Build and Deploy Twitter Bots with Python, Tweepy and PythonAnywhere"
 date: 2018-11-08T21:24:44+01:00
 draft: false
+description: "Build and Deploy Twitter Bot"
+tags: ["python"]
+
 ---
 
 

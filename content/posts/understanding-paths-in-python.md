@@ -2,6 +2,7 @@
 title: "Getting Started with Pathlib"
 date: 2018-11-30T01:12:32+01:00
 draft: false
+tags: ["python"]
 ---
 
 ## Introduction
