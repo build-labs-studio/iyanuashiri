@@ -21,7 +21,7 @@ disqusShortname = 'iyanuashiri-me'
   linkedin = "https://linkedin.com/in/iyanu-ajao"
   # choose a background color from any on this page: http://tachyons.io/docs/themes/skins/ and preface it with "bg-"
   background_color_class = "bg-green"
-  featured_image = "/images/gohugo-default-sample-hero-image.jpg"
+  featured_image = ""
   recent_posts_number = 5
   show_reading_time = true
 
