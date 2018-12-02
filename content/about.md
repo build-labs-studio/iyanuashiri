@@ -3,6 +3,7 @@ title: "About"
 description: Who am I
 date: 2018-12-02T14:27:14+01:00
 type: Page
+featured_image: '/images/iyanuashiri.jpg'
 menu:
   main: {}
 ---
