@@ -125,5 +125,5 @@ with r.open as file:
 There is more than can be learnt on the pathlib documentation page, which can be found [here](https://docs.python.org/3/library/pathlib.html)
 
 
-If you enjoyed this article, don't forget to comment below. You can also follow me on Twitter: [@IyanuAshiri](https:twitter.com/iyanuashiri).
+If you enjoyed this article, don't forget to comment below. You can also follow me on Twitter: [@IyanuAshiri](https://www.twitter.com/iyanuashiri).
 I tweet about Python
