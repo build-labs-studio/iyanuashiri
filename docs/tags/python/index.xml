@@ -6,10 +6,20 @@
     <description>Recent content in Python on IyanuAshiri</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 30 Nov 2018 01:12:32 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 28 Jan 2019 01:10:05 +0100</lastBuildDate>
     
 	<atom:link href="https://iyanuashiri.me/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>You Dont Know Python Variables</title>
+      <link>https://iyanuashiri.me/posts/you-dont-know-python-variables/</link>
+      <pubDate>Mon, 28 Jan 2019 01:10:05 +0100</pubDate>
+      
+      <guid>https://iyanuashiri.me/posts/you-dont-know-python-variables/</guid>
+      <description>The first time you get introduced to Python&amp;rsquo;s variable, it is usually defined as &amp;ldquo;parts of your computer’s memory where you store some information.&amp;rdquo; Some define it as a &amp;ldquo;storage placeholder for texts and numbers.&amp;rdquo; These definitions are both wrong and right.
+A variable is not a placeholder for texts and numbers. Python&amp;rsquo;s variable is a reference to an object created in the computer&amp;rsquo;s memory. The object can be a String, Integer etc.</description>
+    </item>
     
     <item>
       <title>Getting Started with Pathlib</title>
