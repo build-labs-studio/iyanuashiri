@@ -8,9 +8,9 @@ tags: ["python"]
 
 The first time you get introduced to Python's variable, it is usually defined as "parts
 of your computer’s memory where you store some information." Some define it as a "storage placeholder 
-for texts and numbers." These definitions are both wrong and right. 
+for texts and numbers." We will soon find out that Python's variable is deeper than this. 
 
-A variable is not a placeholder for texts and numbers. Python's variable is a _reference_ to an object 
+Python's variable is a _reference_ to an object 
 created in the computer's memory. The object can be a String, Integer etc. In Python, everything is 
 an object. An object has an identity, type and value. The identity of an object never changes. Same with
 the type of the object. The value of the object can or cannot change depending on whether it is an

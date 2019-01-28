@@ -17,8 +17,8 @@
       <pubDate>Mon, 28 Jan 2019 01:10:05 +0100</pubDate>
       
       <guid>https://iyanuashiri.me/posts/you-dont-know-python-variables/</guid>
-      <description>The first time you get introduced to Python&amp;rsquo;s variable, it is usually defined as &amp;ldquo;parts of your computer’s memory where you store some information.&amp;rdquo; Some define it as a &amp;ldquo;storage placeholder for texts and numbers.&amp;rdquo; These definitions are both wrong and right.
-A variable is not a placeholder for texts and numbers. Python&amp;rsquo;s variable is a reference to an object created in the computer&amp;rsquo;s memory. The object can be a String, Integer etc.</description>
+      <description>The first time you get introduced to Python&amp;rsquo;s variable, it is usually defined as &amp;ldquo;parts of your computer’s memory where you store some information.&amp;rdquo; Some define it as a &amp;ldquo;storage placeholder for texts and numbers.&amp;rdquo; We will soon find out that Python&amp;rsquo;s variable is deeper than this.
+Python&amp;rsquo;s variable is a reference to an object created in the computer&amp;rsquo;s memory. The object can be a String, Integer etc. In Python, everything is an object.</description>
     </item>
     
     <item>
