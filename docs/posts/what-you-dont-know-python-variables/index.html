@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>IyanuAshiri </title>
+    <title>IyanuAshiri  | What You Don&#39;t Know Python Variables</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -27,20 +27,18 @@
     
 
     
-      <link href="https://iyanuashiri.me/tags/index.xml" rel="alternate" type="application/rss+xml" title="IyanuAshiri" />
-      <link href="https://iyanuashiri.me/tags/index.xml" rel="feed" type="application/rss+xml" title="IyanuAshiri" />
-    
 
-    <meta property="og:title" content="Tags" />
-<meta property="og:description" content="The last theme you&#39;ll ever need. Maybe." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://iyanuashiri.me/tags/" />
+    <meta property="og:title" content="What You Don&#39;t Know Python Variables" />
+<meta property="og:description" content="The first time you get introduced to Python&rsquo;s variable, it is usually defined as &ldquo;parts of your computer’s memory where you store some information.&rdquo; Some define it as a &ldquo;storage placeholder for texts and numbers.&rdquo; We will soon find out that Python&rsquo;s variable is deeper than this.
+Python&rsquo;s variable is a reference to an object created in the computer&rsquo;s memory. The object can be a String, Integer etc. In Python, everything is an object." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://iyanuashiri.me/posts/what-you-dont-know-python-variables/" />
 
 
 
-<meta property="og:updated_time" content="2019-02-14T09:45:57&#43;01:00"/>
+<meta property="article:published_time" content="2019-01-28T01:10:05&#43;01:00"/>
 
-
+<meta property="article:modified_time" content="2019-01-28T01:10:05&#43;01:00"/>
 
 
 
@@ -49,21 +47,36 @@
 
 
 
-<meta itemprop="name" content="Tags">
-<meta itemprop="description" content="The last theme you&#39;ll ever need. Maybe.">
 
+
+
+<meta itemprop="name" content="What You Don&#39;t Know Python Variables">
+<meta itemprop="description" content="The first time you get introduced to Python&rsquo;s variable, it is usually defined as &ldquo;parts of your computer’s memory where you store some information.&rdquo; Some define it as a &ldquo;storage placeholder for texts and numbers.&rdquo; We will soon find out that Python&rsquo;s variable is deeper than this.
+Python&rsquo;s variable is a reference to an object created in the computer&rsquo;s memory. The object can be a String, Integer etc. In Python, everything is an object.">
+
+
+<meta itemprop="datePublished" content="2019-01-28T01:10:05&#43;01:00" />
+<meta itemprop="dateModified" content="2019-01-28T01:10:05&#43;01:00" />
+<meta itemprop="wordCount" content="563">
+
+
+
+<meta itemprop="keywords" content="python," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Tags"/>
-<meta name="twitter:description" content="The last theme you&#39;ll ever need. Maybe."/>
+<meta name="twitter:title" content="What You Don&#39;t Know Python Variables"/>
+<meta name="twitter:description" content="The first time you get introduced to Python&rsquo;s variable, it is usually defined as &ldquo;parts of your computer’s memory where you store some information.&rdquo; Some define it as a &ldquo;storage placeholder for texts and numbers.&rdquo; We will soon find out that Python&rsquo;s variable is deeper than this.
+Python&rsquo;s variable is a reference to an object created in the computer&rsquo;s memory. The object can be a String, Integer etc. In Python, everything is an object."/>
 
   </head>
 
   <body class="ma0 avenir bg-near-white">
 
     
+   
+  
 
   <header>
-    <div class="pb3-m pb6-l bg-green">
+    <div class="bg-green">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
     <a href="https://iyanuashiri.me/" class="f3 fw2 hover-white no-underline white-90 dib">
@@ -131,100 +144,243 @@
   </div>
 </nav>
 
-      <div class="tc-l pv3 ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
-          Tags
-        </h1>
-        
-      </div>
     </div>
   </header>
 
 
+
     <main class="pb7" role="main">
       
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3 ph0-l">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">What You Don&#39;t Know Python Variables</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-01-28T01:10:05&#43;01:00">January 28, 2019</time>      
+      
+      
+        <span class="f6 mv4 dib tracked"> - 3 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 563 words</span>
+      
+    </header>
+
+    <main class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>The first time you get introduced to Python&rsquo;s variable, it is usually defined as &ldquo;parts
+of your computer’s memory where you store some information.&rdquo; Some define it as a &ldquo;storage placeholder
+for texts and numbers.&rdquo; We will soon find out that Python&rsquo;s variable is deeper than this.</p>
+
+<p>Python&rsquo;s variable is a <em>reference</em> to an object
+created in the computer&rsquo;s memory. The object can be a String, Integer etc. In Python, everything is
+an object. An object has an identity, type and value. The identity of an object never changes. Same with
+the type of the object. The value of the object can or cannot change depending on whether it is an
+immutable object or a mutable object.</p>
+
+<p>For instance:</p>
+
+<pre><code class="language-python">
+name = 'Iyanuoluwa'
+age = 23
+
+id(name) # 140646899064048
+id(age) # 10911104
+
+type(name) # &lt;class 'str'&gt;
+type(age) # &lt;class 'int'&gt;
+
+</code></pre>
+
+<p>The above example shows two variables assigned to their respective values. We check the identity
+and type of the variables using the built-in functions <code>id()</code> and <code>type()</code> respectively.</p>
+
+<p>In Python, objects are first created alongside their type or class and then given an identity.</p>
+
+<pre><code class="language-python">
+print(id(23)) # 10911104
+</code></pre>
+
+<p>We can see that the object <code>23</code>, which is an Integer, has its own identity irrespective of whether
+it was assigned to a variable name or not. This further explains Python variables. They are just names
+that references an object created.</p>
+
+<p>Now when we compare the id for the object <code>23</code> and that for the variable age, we can see that
+they have the same identity. I will explain what just happened.</p>
+
+<p>Integers in the range <code>-5 to 256</code> are created by the interpreter during startup. These integers
+can then be used whenever you are running your program, thus speeding things up. Hence the id of each
+number will always remain the same. This is why when we created the first object <code>23</code> and assigned
+to the variable <code>age</code> and the second object <code>23</code>, they have the same identity. Python didn&rsquo;t
+create a separate a object <code>23</code>, it just used the one that was created during startup.</p>
+
+<p>To understand this better, let&rsquo;s use integers outside this range.</p>
+
+<pre><code class="language-python">
+DOB = 1995 
+id(DOB) # 139959945941488
+
+
+iyanu = 1995 
+id(iyanu) # 139959945943056
+</code></pre>
+
+<p>From the above example, we can see that separate <code>1995</code> objects were created and assigned to their
+respective variable names.</p>
+
+<p>Now let&rsquo;s take the example further and assign a single object to two separate variable names.</p>
+
+<pre><code class="language-python">year = 2019
+
+date = year
+
+id(year) # 139959945941392
+
+id(date) # 139959945941392
+</code></pre>
+
+<p>We can see that the two variable names have the same identity because they were assigned to the same
+object.</p>
+
+<p>The last thing to note about Python variables and their values is that an object must have at least
+one reference, otherwise, the object will be
+<a href="https://wikipedia.com/Garbage_collection_computer_science"><em>Garbage collected.</em></a>
+Let&rsquo;s continue from the previous example.</p>
+
+<pre><code class="language-python">year = 2019 # 2019 has at least one reference
+
+date = year # 2019 has two references
+
+year = 2020 # date is the only reference to 2019
+
+date = 2020 # 2019 no longer has any reference and has been garbage collected
+</code></pre>
+
+<p>When an object has zero reference, it becomes garbage collected. This is an automatic memory
+management technique. There are various types of garbage collection and this type is called
+Reference counting.</p>
+
+<p>If you enjoyed this article, don&rsquo;t forget to share and comment below. Follow me on Twitter: <a href="https://www.twitter.com/iyanuashiri">@IyanuAshiri</a>, I tweet about Python</p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/python" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">python</a>
+   </li>
+  
+</ul>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-130170274-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+      
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-130170274-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+        
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fiyanuashiri.me%2fposts%2fwhat-you-dont-know-python-variables%2f" target="_blank" aria-label="Facebook">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    </div>Facebook</div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=What%20You%20Don%27t%20Know%20Python%20Variables&amp;url=https%3a%2f%2fiyanuashiri.me%2fposts%2fwhat-you-dont-know-python-variables%2f" target="_blank" aria-label="Twitter">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    </div>Twitter</div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="mailto:?subject=What%20You%20Don%27t%20Know%20Python%20Variables&amp;body=https%3a%2f%2fiyanuashiri.me%2fposts%2fwhat-you-dont-know-python-variables%2f" target="_self" aria-label="E-Mail">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    </div>E-Mail</div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fiyanuashiri.me%2fposts%2fwhat-you-dont-know-python-variables%2f&amp;title=What%20You%20Don%27t%20Know%20Python%20Variables&amp;summary=&amp;source=" target="_blank" aria-label="LinkedIn">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    </div>LinkedIn</div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https%3a%2f%2fiyanuashiri.me%2fposts%2fwhat-you-dont-know-python-variables%2f" target="_blank" aria-label="Reddit">
+  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    </div>Reddit</div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="whatsapp://send?text=https%3a%2f%2fiyanuashiri.me%2fposts%2fwhat-you-dont-know-python-variables%2f" target="_blank" aria-label="WhatsApp">
+  <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    </div>WhatsApp</div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fiyanuashiri.me%2fposts%2fwhat-you-dont-know-python-variables%2f&amp;t=What%20You%20Don%27t%20Know%20Python%20Variables" target="_blank" aria-label="Hacker News">
+  <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      </div>Hacker News</div>
+</a>
+<div class="mt6">
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
     
-  <article class="cf pa3 pa4-m pa4-l">
-    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links nested-img mid-gray">
-      
-    </div>
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "iyanuashiri-me" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </main>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/understanding-paths-in-python/">Getting Started with Pathlib</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/build-and-deploy-twitter-bots/">Build and Deploy Twitter Bots with Python, Tweepy and PythonAnywhere</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
   </article>
-  <div class="mw8 center">
-    <section class="ph4">
-      
-        <h2 class="f1">
-          <a href="/tags/python" class="link blue hover-black">
-            Tag: python
-          </a>
-        </h2>
-        
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/adding-types-to-legacy-python-codebases/" class="link black dim">
-        Type Hints: Adding Types to Legacy Python Codebases
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Type Hints: Adding Types to Legacy Codebases Introduction Python is an interpreted and dynamic language. This means Python code is executed at runtime and also doesn&rsquo;t make use of a type system when defining language constructs such as variables and functions.
-In Python 3.5, the typing module was introduced. This allows Python code to be gradually typed i.e Types can be added to some parts (variables, functions, classes etc.) of a codebase and checked at runtime (static typing) and some other parts (variables, functions etc.
-    </div>
-  </div>
-</div>
-
-        
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/what-you-dont-know-python-variables/" class="link black dim">
-        What You Don&#39;t Know Python Variables
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      The first time you get introduced to Python&rsquo;s variable, it is usually defined as &ldquo;parts of your computer’s memory where you store some information.&rdquo; Some define it as a &ldquo;storage placeholder for texts and numbers.&rdquo; We will soon find out that Python&rsquo;s variable is deeper than this.
-Python&rsquo;s variable is a reference to an object created in the computer&rsquo;s memory. The object can be a String, Integer etc. In Python, everything is an object.
-    </div>
-  </div>
-</div>
-
-        
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/understanding-paths-in-python/" class="link black dim">
-        Getting Started with Pathlib
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Introduction This tutorial will guide you on how to use the Pathlib module for working with filesystem paths, the benefits, and understand the problem it solves since the Python standard library already contains os.path.
-How is it Better than os.path os.path was the only way to work with filesystem paths, but it had some limitations. To perform certain tasks, you have to import from other standard library modules. For instance, suppose you want to list the files ending with .
-    </div>
-  </div>
-</div>
-
-        
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/build-and-deploy-twitter-bots/" class="link black dim">
-        Build and Deploy Twitter Bots with Python, Tweepy and PythonAnywhere
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      A Twilio blog post that I wrote on how to build a Twitter bot using Python, Tweepy and PythonAnywhere. Click Here
-If you enjoyed this article, don&rsquo;t forget to share and comment below. Follow me on Twitter: @IyanuAshiri, I tweet about Python
-    </div>
-  </div>
-</div>
-
-        
-      
-    </section>
-  </div>
 
     </main>
     <footer class="bg-green bottom-0 w-100 pa3" role="contentinfo">

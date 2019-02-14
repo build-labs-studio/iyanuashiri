@@ -1,5 +1,5 @@
 ---
-title: "You Dont Know Python Variables"
+title: "What You Don't Know Python Variables"
 date: 2019-01-28T01:10:05+01:00
 draft: false
 tags: ["python"]

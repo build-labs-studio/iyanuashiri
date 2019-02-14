@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>IyanuAshiri  | Type Hints: Adding Types to Legacy Python Codebases</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.40.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.e08a958ae3e530145318b6373195c765.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Type Hints: Adding Types to Legacy Python Codebases" />
+<meta property="og:description" content="Type Hints: Adding Types to Legacy Codebases Introduction Python is an interpreted and dynamic language. This means Python code is executed at runtime and also doesn&rsquo;t make use of a type system when defining language constructs such as variables and functions.
+In Python 3.5, the typing module was introduced. This allows Python code to be gradually typed i.e Types can be added to some parts (variables, functions, classes etc.) of a codebase and checked at runtime (static typing) and some other parts (variables, functions etc." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://iyanuashiri.me/posts/adding-types-to-legacy-python-codebases/" />
+
+
+
+<meta property="article:published_time" content="2019-02-14T09:45:57&#43;01:00"/>
+
+<meta property="article:modified_time" content="2019-02-14T09:45:57&#43;01:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Type Hints: Adding Types to Legacy Python Codebases">
+<meta itemprop="description" content="Type Hints: Adding Types to Legacy Codebases Introduction Python is an interpreted and dynamic language. This means Python code is executed at runtime and also doesn&rsquo;t make use of a type system when defining language constructs such as variables and functions.
+In Python 3.5, the typing module was introduced. This allows Python code to be gradually typed i.e Types can be added to some parts (variables, functions, classes etc.) of a codebase and checked at runtime (static typing) and some other parts (variables, functions etc.">
+
+
+<meta itemprop="datePublished" content="2019-02-14T09:45:57&#43;01:00" />
+<meta itemprop="dateModified" content="2019-02-14T09:45:57&#43;01:00" />
+<meta itemprop="wordCount" content="1144">
+
+
+
+<meta itemprop="keywords" content="python," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Type Hints: Adding Types to Legacy Python Codebases"/>
+<meta name="twitter:description" content="Type Hints: Adding Types to Legacy Codebases Introduction Python is an interpreted and dynamic language. This means Python code is executed at runtime and also doesn&rsquo;t make use of a type system when defining language constructs such as variables and functions.
+In Python 3.5, the typing module was introduced. This allows Python code to be gradually typed i.e Types can be added to some parts (variables, functions, classes etc.) of a codebase and checked at runtime (static typing) and some other parts (variables, functions etc."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-green">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://iyanuashiri.me/" class="f3 fw2 hover-white no-underline white-90 dib">
+      IyanuAshiri
+    </a>
+    <div class="flex-l items-center">
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+  <a href="https://twitter.com/IyanuAshiri" class="link-transition twitter link dib z-999 pt3 pt0-l mr2" title="Twitter link">
+    <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+  </a>
+
+
+  <a href="https://instagram.com/iyanuashiri" class="link-transition instagram link dib z-999 pt3 pt0-l mr2" title="Instagram link">
+    <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M42.271,26.578v-0.006c0.502,0,1.005,0.01,1.508-0.002  c0.646-0.017,1.172-0.57,1.172-1.217c0-0.963,0-1.927,0-2.89c0-0.691-0.547-1.24-1.236-1.241c-0.961,0-1.922-0.001-2.883,0  c-0.688,0.001-1.236,0.552-1.236,1.243c-0.001,0.955-0.004,1.91,0.003,2.865c0.001,0.143,0.028,0.291,0.073,0.426  c0.173,0.508,0.639,0.82,1.209,0.823C41.344,26.579,41.808,26.578,42.271,26.578z M33,27.817c-3.384-0.002-6.135,2.721-6.182,6.089  c-0.049,3.46,2.72,6.201,6.04,6.272c3.454,0.074,6.248-2.686,6.321-6.043C39.254,30.675,36.462,27.815,33,27.817z M21.046,31.116  v0.082c0,4.515-0.001,9.03,0,13.545c0,0.649,0.562,1.208,1.212,1.208c7.16,0.001,14.319,0.001,21.479,0  c0.656,0,1.215-0.557,1.215-1.212c0.001-4.509,0-9.02,0-13.528v-0.094h-2.912c0.411,1.313,0.537,2.651,0.376,4.014  c-0.161,1.363-0.601,2.631-1.316,3.803s-1.644,2.145-2.779,2.918c-2.944,2.006-6.821,2.182-9.946,0.428  c-1.579-0.885-2.819-2.12-3.685-3.713c-1.289-2.373-1.495-4.865-0.739-7.451C22.983,31.116,22.021,31.116,21.046,31.116z   M45.205,49.255c0.159-0.026,0.318-0.049,0.475-0.083c1.246-0.265,2.264-1.304,2.508-2.557c0.025-0.137,0.045-0.273,0.067-0.409  V21.794c-0.021-0.133-0.04-0.268-0.065-0.401c-0.268-1.367-1.396-2.428-2.78-2.618c-0.058-0.007-0.113-0.02-0.17-0.03H20.761  c-0.147,0.027-0.296,0.047-0.441,0.08c-1.352,0.308-2.352,1.396-2.545,2.766c-0.008,0.057-0.02,0.114-0.029,0.171V46.24  c0.028,0.154,0.05,0.311,0.085,0.465c0.299,1.322,1.427,2.347,2.77,2.52c0.064,0.008,0.13,0.021,0.195,0.03H45.205z M33,64  C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+  </a>
+
+
+
+  <a href="https://linkedin.com/in/iyanu-ajao" class="link-transition linkedin link dib z-999 pt3 pt0-l mr2" title="LinkedIn link">
+    <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+  </a>
+
+
+  <a href="https://github.com/iyanuashiri" class="link-transition github link dib z-999 pt3 pt0-l mr2" title="Github link">
+    <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+  </a>
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3 ph0-l">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">Type Hints: Adding Types to Legacy Python Codebases</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-02-14T09:45:57&#43;01:00">February 14, 2019</time>      
+      
+      
+        <span class="f6 mv4 dib tracked"> - 6 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 1144 words</span>
+      
+    </header>
+
+    <main class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h1 id="type-hints-adding-types-to-legacy-codebases">Type Hints: Adding Types to Legacy Codebases</h1>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Python is an interpreted and dynamic language. This means Python code is executed at runtime and also
+doesn&rsquo;t make use of a type system when defining language constructs such as variables and functions.</p>
+
+<p>In Python 3.5, the typing module was introduced. This allows Python code to be gradually typed i.e Types
+can be added to some parts (variables, functions, classes etc.) of a codebase and checked at runtime
+(static typing) and some other parts (variables, functions etc.) of the codebase don&rsquo;t contain types,
+hence type errors can appear at runtime (dynamic typing).</p>
+
+<h2 id="advantages-of-adding-types">Advantages of Adding Types</h2>
+
+<ol>
+<li>It enables the detection of many programming errors quickly, reliably and automatically.</li>
+<li>It provides ready-made documentation.</li>
+
+<li><p>It eliminates an entire category of bugs. Type errors at runtime are the most common errors
+encountered by Python developers.</p></li>
+
+<li><p>It reduces the number of unit tests. There will be no need to write tests that checks for the types
+of some code expressions.</p></li>
+</ol>
+
+<h2 id="gradual-typing-in-python">Gradual Typing in Python</h2>
+
+<p>Like it was stated earlier, gradual typing is a type system that gives you the option of either adding
+types or not. Some common examples of gradually typed languages are JavaScript(Typescript), etc. In
+Python, we gradually type our codebase using the typing module and  tools such as <a href="https://github.com/python/mypy">mypy</a>
+or <a href="https://pyre-check.org/">pyre</a> allow us to get the benefit of static typing when we run these tools on our codebase.</p>
+
+<p>Running a Python code that has been gradually typed doesn&rsquo;t automatically catch type errors, Python is
+still a dynamic language, but when we run tools like mypy or pyre on our code, they help catch type
+errors for parts of the code that have been typed.</p>
+
+<h2 id="getting-started-with-type-hints">Getting Started with Type Hints</h2>
+
+<h6 id="type-checking-variables">Type Checking Variables</h6>
+
+<pre><code>age: int = 5
+
+name: str = 'Iyanuoluwa'
+</code></pre>
+
+<p>The first line shows the variable name <code>age</code> assigned to the value 5 which is an integer.</p>
+
+<p>The second line shows the variable name <code>name</code> assigned to the value <code>Iyanuoluwa</code> which is a string</p>
+
+<h6 id="type-checking-functions">Type Checking Functions</h6>
+
+<pre><code>def multiply(num1: int, num2: int) -&gt; int:
+    return num1 * num2
+</code></pre>
+
+<p>You can see the function parameters defines a type. The return value is also typed.</p>
+
+<h6 id="complex-data-types">Complex Data Types</h6>
+
+<pre><code>from typing import List
+
+ages: List[int] = [18, 20, 34]
+</code></pre>
+
+<p>For complex data types such as List, Dict, Tuple etc, we have to import them from the typing module.
+In this example, <code>ages</code> is assigned to a List of integers.</p>
+
+<pre><code>from typing import Dict
+
+staff_ages: Dict[str: int] = {'iyanu': 23, 'ajao': 24}
+</code></pre>
+
+<p>In this example, <code>staff_ages</code> is assigned to a Dictionary with a <code>str</code> as Key and <code>int</code> as
+Value.</p>
+
+<pre><code>from typing import Tuple
+
+data: Tuple[str, int, float] = ('iyanu', 64, 5.9)
+</code></pre>
+
+<p>A Tuple is an immutable data structure. You can&rsquo;t add new or change the values contained in the Tuple.
+So when you want to type a Tuple, you have to state the types for all the values that will be contained
+in the Tuple.</p>
+
+<h6 id="creating-aliases">Creating Aliases</h6>
+
+<pre><code>from typing import Dict, List
+
+list_of_dicts: List[Dict[str: int]] = [{'iyanu': 10, 'ajao': 12}]
+
+ListOfDict = List[Dict[str: int]]
+
+list_of_dicts: ListOfDict = [{'iyanu': 10, 'ajao': 12}]
+</code></pre>
+
+<p>You can create alias for complex data structures. You assign a name to the type of the complex data
+structure.</p>
+
+<h2 id="some-limitations-of-python-type-hints">Some Limitations of Python Type Hints</h2>
+
+<h3 id="first-limitation">First Limitation</h3>
+
+<pre><code>from typing import List
+
+ages: List[int] = [1, 2]
+
+ages.append('Iyanu')
+</code></pre>
+
+<p><code>mypy</code> static checker will complain when we try to add a string since the type is a List of integer.
+But a Python List is heterogeneous, hence it is normal for the List data type to contain both an
+integer and string.</p>
+
+<h3 id="first-workaround">First Workaround</h3>
+
+<pre><code>from typing import List, Union
+
+ages: List[Union[str, int]] = [1, 2]
+
+ages.append('Iyanu')
+</code></pre>
+
+<p>Now with the workaround, <code>mypy</code> won&rsquo;t complain because we now have a List of either a string or
+integer. That is what <code>Union</code> is for.</p>
+
+<h3 id="second-limitation">Second Limitation</h3>
+
+<pre><code>def get_id():
+    pass
+    
+def send_email(id: int):
+    pass
+    
+   
+id = get_id() # returns None
+
+send_email(id)
+</code></pre>
+
+<p>In the above example, the <code>get_id()</code> function is expected to return an integer as id but there are
+scenarios where <code>None</code> is returned. This means the <code>send_email()</code> function will accept a `<code>None</code>
+which will most likely cause an error.</p>
+
+<h3 id="second-workaround">Second Workaround</h3>
+
+<pre><code>from typing import Union
+
+
+def get_id() -&gt; Union[int, None]:
+    pass
+    
+def send_email(id: int):
+    pass
+    
+   
+id = get_id() # returns None
+
+send_email(id)
+</code></pre>
+
+<p>Just like the first workaround, we are making use <code>Union</code> again. This time the return value for
+<code>get_id()</code> function is either an integer or a None.</p>
+
+<p>Due to how common this limitation is, a special type was included in the typing module. It is called</p>
+
+<pre><code class="language-Optional```.">
+
+</code></pre>
+
+<p>from typing import Optional</p>
+
+<p>def get_id() -&gt; Optional[int]:
+    pass</p>
+
+<p>def send_email(id: int):
+    pass</p>
+
+<p>id = get_id() # returns None</p>
+
+<p>send_email(id)</p>
+
+<pre><code>
+This means you can replace ```Union[int, None]``` with ```Optional[int]```.
+
+
+### Third Limitation
+
+</code></pre>
+
+<p>id: int</p>
+
+<p>id = &lsquo;i.8&rsquo;</p>
+
+<pre><code>There are instances where a variable is defined to accept a particular say an integer, but along the 
+line, you have to pass an integer that has been quoted. (A number that is in strings)
+
+### Third Workaround (a)
+
+</code></pre>
+
+<p>id: int</p>
+
+<p>id: &lsquo;1.8&rsquo; # type: ignore</p>
+
+<pre><code>
+The first workaround is to use a comment like the one above. When mypy gets to this code, it ignores
+whatever is there
+
+### Third Workaround (b)
+</code></pre>
+
+<p>def legacy_parser(text):
+    return data</p>
+
+<p>def legacy_parser(text: Any) -&gt; Any
+    return data</p>
+
+<pre><code>
+In this example, we have a function that accepts a text. The text can contain any combination of 
+data type e.g integer, strings, floats etc. It can also return any combination of data type.
+
+Hence we type the function parameter and the return as ```Any```
+
+## Adding Types To Legacy Codebases
+
+At this juncture, we now know how to gradually type our existing codebases. We don't have to go all in.
+We can start with the critical parts that is always showing type errors and move to the parts that
+are less critical. 
+
+There is also a way to automate this process. [MonkeyType](https://github.com/Instagram/MonkeyType) is an open source tool developed at Instagram 
+that adds type hints to our codebase. It collects runtime types of function arguments and return values.
+
+## How to use MonkeyType
+
+For instance, we have a file called ```add.py``` we the following the ```add``` function defined in the
+file.
+
+</code></pre>
+
+<p>add.py</p>
+
+<p>def add(num1, num2):
+    return num1 + num2</p>
+
+<pre><code>
+We have another file called ```calls_add.py```. This file calls the add function.
+
+</code></pre>
+
+<p>calls_add.py</p>
+
+<p>add(1, 2)</p>
+
+<pre><code>
+</code></pre>
+
+<p>monkeytype run calls_add.py</p>
+
+<p>monkeytype stub add.py</p>
+
+<p>monkeytype apply add.py</p>
+
+<pre><code>
+When you open the ```add.py``` file, you see the following.
+
+</code></pre>
+
+<p>add.py</p>
+
+<p>def add(num1:int, num2:int) -&gt; :
+    return num1 + num2
+```</p>
+
+<p>With MonkeyType, we can automate add types to our legacy codebases and fix the parts that MonkeyType
+didn&rsquo;t do a good job with.</p>
+
+<p>Finally, in order to greatly benefit from a gradual type system, it is best to use the type checker in
+your continuous integration.</p>
+
+<p>You can follow me on Twitter: @IyanuAshiri and checkout my blog <a href="https://iyanuashiri.me">https://iyanuashiri.me</a> for more
+Python content.</p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/python" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">python</a>
+   </li>
+  
+</ul>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-130170274-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+      
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-130170274-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+        
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fiyanuashiri.me%2fposts%2fadding-types-to-legacy-python-codebases%2f" target="_blank" aria-label="Facebook">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    </div>Facebook</div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=Type%20Hints%3a%20Adding%20Types%20to%20Legacy%20Python%20Codebases&amp;url=https%3a%2f%2fiyanuashiri.me%2fposts%2fadding-types-to-legacy-python-codebases%2f" target="_blank" aria-label="Twitter">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    </div>Twitter</div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="mailto:?subject=Type%20Hints%3a%20Adding%20Types%20to%20Legacy%20Python%20Codebases&amp;body=https%3a%2f%2fiyanuashiri.me%2fposts%2fadding-types-to-legacy-python-codebases%2f" target="_self" aria-label="E-Mail">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    </div>E-Mail</div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fiyanuashiri.me%2fposts%2fadding-types-to-legacy-python-codebases%2f&amp;title=Type%20Hints%3a%20Adding%20Types%20to%20Legacy%20Python%20Codebases&amp;summary=&amp;source=" target="_blank" aria-label="LinkedIn">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    </div>LinkedIn</div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https%3a%2f%2fiyanuashiri.me%2fposts%2fadding-types-to-legacy-python-codebases%2f" target="_blank" aria-label="Reddit">
+  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    </div>Reddit</div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="whatsapp://send?text=https%3a%2f%2fiyanuashiri.me%2fposts%2fadding-types-to-legacy-python-codebases%2f" target="_blank" aria-label="WhatsApp">
+  <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    </div>WhatsApp</div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fiyanuashiri.me%2fposts%2fadding-types-to-legacy-python-codebases%2f&amp;t=Type%20Hints%3a%20Adding%20Types%20to%20Legacy%20Python%20Codebases" target="_blank" aria-label="Hacker News">
+  <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      </div>Hacker News</div>
+</a>
+<div class="mt6">
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "iyanuashiri-me" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </main>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/what-you-dont-know-python-variables/">What You Don&#39;t Know Python Variables</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/understanding-paths-in-python/">Getting Started with Pathlib</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/build-and-deploy-twitter-bots/">Build and Deploy Twitter Bots with Python, Tweepy and PythonAnywhere</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-green bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://iyanuashiri.me/" >
+    &copy; 2019 IyanuAshiri
+  </a>
+    <div>
+
+
+
+  <a href="https://twitter.com/IyanuAshiri" class="link-transition twitter link dib z-999 pt3 pt0-l mr2" title="Twitter link">
+    <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+  </a>
+
+
+  <a href="https://instagram.com/iyanuashiri" class="link-transition instagram link dib z-999 pt3 pt0-l mr2" title="Instagram link">
+    <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M42.271,26.578v-0.006c0.502,0,1.005,0.01,1.508-0.002  c0.646-0.017,1.172-0.57,1.172-1.217c0-0.963,0-1.927,0-2.89c0-0.691-0.547-1.24-1.236-1.241c-0.961,0-1.922-0.001-2.883,0  c-0.688,0.001-1.236,0.552-1.236,1.243c-0.001,0.955-0.004,1.91,0.003,2.865c0.001,0.143,0.028,0.291,0.073,0.426  c0.173,0.508,0.639,0.82,1.209,0.823C41.344,26.579,41.808,26.578,42.271,26.578z M33,27.817c-3.384-0.002-6.135,2.721-6.182,6.089  c-0.049,3.46,2.72,6.201,6.04,6.272c3.454,0.074,6.248-2.686,6.321-6.043C39.254,30.675,36.462,27.815,33,27.817z M21.046,31.116  v0.082c0,4.515-0.001,9.03,0,13.545c0,0.649,0.562,1.208,1.212,1.208c7.16,0.001,14.319,0.001,21.479,0  c0.656,0,1.215-0.557,1.215-1.212c0.001-4.509,0-9.02,0-13.528v-0.094h-2.912c0.411,1.313,0.537,2.651,0.376,4.014  c-0.161,1.363-0.601,2.631-1.316,3.803s-1.644,2.145-2.779,2.918c-2.944,2.006-6.821,2.182-9.946,0.428  c-1.579-0.885-2.819-2.12-3.685-3.713c-1.289-2.373-1.495-4.865-0.739-7.451C22.983,31.116,22.021,31.116,21.046,31.116z   M45.205,49.255c0.159-0.026,0.318-0.049,0.475-0.083c1.246-0.265,2.264-1.304,2.508-2.557c0.025-0.137,0.045-0.273,0.067-0.409  V21.794c-0.021-0.133-0.04-0.268-0.065-0.401c-0.268-1.367-1.396-2.428-2.78-2.618c-0.058-0.007-0.113-0.02-0.17-0.03H20.761  c-0.147,0.027-0.296,0.047-0.441,0.08c-1.352,0.308-2.352,1.396-2.545,2.766c-0.008,0.057-0.02,0.114-0.029,0.171V46.24  c0.028,0.154,0.05,0.311,0.085,0.465c0.299,1.322,1.427,2.347,2.77,2.52c0.064,0.008,0.13,0.021,0.195,0.03H45.205z M33,64  C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+  </a>
+
+
+
+  <a href="https://linkedin.com/in/iyanu-ajao" class="link-transition linkedin link dib z-999 pt3 pt0-l mr2" title="LinkedIn link">
+    <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+  </a>
+
+
+  <a href="https://github.com/iyanuashiri" class="link-transition github link dib z-999 pt3 pt0-l mr2" title="Github link">
+    <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+  </a>
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

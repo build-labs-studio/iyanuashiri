@@ -6,17 +6,27 @@
     <description>Recent content in Python on IyanuAshiri</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Jan 2019 01:10:05 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 14 Feb 2019 09:45:57 +0100</lastBuildDate>
     
 	<atom:link href="https://iyanuashiri.me/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>You Dont Know Python Variables</title>
-      <link>https://iyanuashiri.me/posts/you-dont-know-python-variables/</link>
+      <title>Type Hints: Adding Types to Legacy Python Codebases</title>
+      <link>https://iyanuashiri.me/posts/adding-types-to-legacy-python-codebases/</link>
+      <pubDate>Thu, 14 Feb 2019 09:45:57 +0100</pubDate>
+      
+      <guid>https://iyanuashiri.me/posts/adding-types-to-legacy-python-codebases/</guid>
+      <description>Type Hints: Adding Types to Legacy Codebases Introduction Python is an interpreted and dynamic language. This means Python code is executed at runtime and also doesn&amp;rsquo;t make use of a type system when defining language constructs such as variables and functions.
+In Python 3.5, the typing module was introduced. This allows Python code to be gradually typed i.e Types can be added to some parts (variables, functions, classes etc.) of a codebase and checked at runtime (static typing) and some other parts (variables, functions etc.</description>
+    </item>
+    
+    <item>
+      <title>What You Don&#39;t Know Python Variables</title>
+      <link>https://iyanuashiri.me/posts/what-you-dont-know-python-variables/</link>
       <pubDate>Mon, 28 Jan 2019 01:10:05 +0100</pubDate>
       
-      <guid>https://iyanuashiri.me/posts/you-dont-know-python-variables/</guid>
+      <guid>https://iyanuashiri.me/posts/what-you-dont-know-python-variables/</guid>
       <description>The first time you get introduced to Python&amp;rsquo;s variable, it is usually defined as &amp;ldquo;parts of your computer’s memory where you store some information.&amp;rdquo; Some define it as a &amp;ldquo;storage placeholder for texts and numbers.&amp;rdquo; We will soon find out that Python&amp;rsquo;s variable is deeper than this.
 Python&amp;rsquo;s variable is a reference to an object created in the computer&amp;rsquo;s memory. The object can be a String, Integer etc. In Python, everything is an object.</description>
     </item>
