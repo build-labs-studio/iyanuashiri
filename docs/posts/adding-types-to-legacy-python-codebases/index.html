@@ -57,7 +57,7 @@ In Python 3.5, the typing module was introduced. This allows Python code to be g
 
 <meta itemprop="datePublished" content="2019-02-14T09:45:57&#43;01:00" />
 <meta itemprop="dateModified" content="2019-02-14T09:45:57&#43;01:00" />
-<meta itemprop="wordCount" content="1144">
+<meta itemprop="wordCount" content="1139">
 
 
 
@@ -165,7 +165,7 @@ In Python 3.5, the typing module was introduced. This allows Python code to be g
       
       
         <span class="f6 mv4 dib tracked"> - 6 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 1144 words</span>
+        <span class="f6 mv4 dib tracked"> - 1139 words</span>
       
     </header>
 
@@ -334,115 +334,101 @@ send_email(id)
 <p>Just like the first workaround, we are making use <code>Union</code> again. This time the return value for
 <code>get_id()</code> function is either an integer or a None.</p>
 
-<p>Due to how common this limitation is, a special type was included in the typing module. It is called</p>
+<p>Due to how common this limitation is, a special type was included in the typing module. It is called <code>Optional</code>.</p>
 
-<pre><code class="language-Optional```.">
+<pre><code>from typing import Optional
 
+
+def get_id() -&gt; Optional[int]:
+    pass
+    
+def send_email(id: int):
+    pass
+    
+   
+id = get_id() # returns None
+
+send_email(id)
 </code></pre>
 
-<p>from typing import Optional</p>
+<p>This means you can replace <code>Union[int, None]</code> with <code>Optional[int]</code>.</p>
 
-<p>def get_id() -&gt; Optional[int]:
-    pass</p>
+<h3 id="third-limitation">Third Limitation</h3>
 
-<p>def send_email(id: int):
-    pass</p>
+<pre><code>id: int
 
-<p>id = get_id() # returns None</p>
-
-<p>send_email(id)</p>
-
-<pre><code>
-This means you can replace ```Union[int, None]``` with ```Optional[int]```.
-
-
-### Third Limitation
-
+id = 'i.8'
 </code></pre>
 
-<p>id: int</p>
+<p>There are instances where a variable is defined to accept a particular say an integer, but along the
+line, you have to pass an integer that has been quoted. (A number that is in strings)</p>
 
-<p>id = &lsquo;i.8&rsquo;</p>
+<h3 id="third-workaround-a">Third Workaround (a)</h3>
 
-<pre><code>There are instances where a variable is defined to accept a particular say an integer, but along the 
-line, you have to pass an integer that has been quoted. (A number that is in strings)
+<pre><code>id: int
 
-### Third Workaround (a)
-
+id: '1.8' # type: ignore
 </code></pre>
 
-<p>id: int</p>
+<p>The first workaround is to use a comment like the one above. When mypy gets to this code, it ignores
+whatever is there</p>
 
-<p>id: &lsquo;1.8&rsquo; # type: ignore</p>
+<h3 id="third-workaround-b">Third Workaround (b)</h3>
 
-<pre><code>
-The first workaround is to use a comment like the one above. When mypy gets to this code, it ignores
-whatever is there
-
-### Third Workaround (b)
+<pre><code>def legacy_parser(text):
+    return data
+    
+    
+def legacy_parser(text: Any) -&gt; Any
+    return data
 </code></pre>
 
-<p>def legacy_parser(text):
-    return data</p>
+<p>In this example, we have a function that accepts a text. The text can contain any combination of
+data type e.g integer, strings, floats etc. It can also return any combination of data type.</p>
 
-<p>def legacy_parser(text: Any) -&gt; Any
-    return data</p>
+<p>Hence we type the function parameter and the return as <code>Any</code></p>
 
-<pre><code>
-In this example, we have a function that accepts a text. The text can contain any combination of 
-data type e.g integer, strings, floats etc. It can also return any combination of data type.
+<h2 id="adding-types-to-legacy-codebases">Adding Types To Legacy Codebases</h2>
 
-Hence we type the function parameter and the return as ```Any```
-
-## Adding Types To Legacy Codebases
-
-At this juncture, we now know how to gradually type our existing codebases. We don't have to go all in.
+<p>At this juncture, we now know how to gradually type our existing codebases. We don&rsquo;t have to go all in.
 We can start with the critical parts that is always showing type errors and move to the parts that
-are less critical. 
+are less critical.</p>
 
-There is also a way to automate this process. [MonkeyType](https://github.com/Instagram/MonkeyType) is an open source tool developed at Instagram 
-that adds type hints to our codebase. It collects runtime types of function arguments and return values.
+<p>There is also a way to automate this process. <a href="https://github.com/Instagram/MonkeyType">MonkeyType</a> is an open source tool developed at Instagram
+that adds type hints to our codebase. It collects runtime types of function arguments and return values.</p>
 
-## How to use MonkeyType
+<h2 id="how-to-use-monkeytype">How to use MonkeyType</h2>
 
-For instance, we have a file called ```add.py``` we the following the ```add``` function defined in the
-file.
+<p>For instance, we have a file called <code>add.py</code> we the following the <code>add</code> function defined in the
+file.</p>
 
-</code></pre>
+<pre><code>add.py
 
-<p>add.py</p>
-
-<p>def add(num1, num2):
-    return num1 + num2</p>
-
-<pre><code>
-We have another file called ```calls_add.py```. This file calls the add function.
-
-</code></pre>
-
-<p>calls_add.py</p>
-
-<p>add(1, 2)</p>
-
-<pre><code>
-</code></pre>
-
-<p>monkeytype run calls_add.py</p>
-
-<p>monkeytype stub add.py</p>
-
-<p>monkeytype apply add.py</p>
-
-<pre><code>
-When you open the ```add.py``` file, you see the following.
-
-</code></pre>
-
-<p>add.py</p>
-
-<p>def add(num1:int, num2:int) -&gt; :
+def add(num1, num2):
     return num1 + num2
-```</p>
+</code></pre>
+
+<p>We have another file called <code>calls_add.py</code>. This file calls the add function.</p>
+
+<pre><code>calls_add.py
+
+add(1, 2)
+</code></pre>
+
+<pre><code>monkeytype run calls_add.py
+
+monkeytype stub add.py
+
+monkeytype apply add.py
+</code></pre>
+
+<p>When you open the <code>add.py</code> file, you see the following.</p>
+
+<pre><code>add.py
+
+def add(num1:int, num2:int) -&gt; :
+    return num1 + num2
+</code></pre>
 
 <p>With MonkeyType, we can automate add types to our legacy codebases and fix the parts that MonkeyType
 didn&rsquo;t do a good job with.</p>

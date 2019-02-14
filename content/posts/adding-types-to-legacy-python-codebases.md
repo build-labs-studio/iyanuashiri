@@ -122,6 +122,7 @@ integer and string.
 
 
 ### First Workaround
+
 ```
 from typing import List, Union
 
@@ -174,8 +175,7 @@ send_email(id)
 Just like the first workaround, we are making use ```Union``` again. This time the return value for
 ```get_id()``` function is either an integer or a None.
 
-Due to how common this limitation is, a special type was included in the typing module. It is called
-```Optional```.
+Due to how common this limitation is, a special type was included in the typing module. It is called ```Optional```.
 
 
 ```
