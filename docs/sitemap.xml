@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://iyanuashiri.me/subscribe/</loc>
+    <lastmod>2019-02-14T10:49:34+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://iyanuashiri.me/posts/adding-types-to-legacy-python-codebases/</loc>
     <lastmod>2019-02-14T09:45:57+01:00</lastmod>
   </url>
@@ -39,7 +44,7 @@
   
   <url>
     <loc>https://iyanuashiri.me/</loc>
-    <lastmod>2019-02-14T09:45:57+01:00</lastmod>
+    <lastmod>2019-02-14T10:49:34+01:00</lastmod>
     <priority>0</priority>
   </url>
   
