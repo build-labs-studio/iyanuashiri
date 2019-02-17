@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>IyanuAshiri  | Type Hints: Adding Types to Legacy Python Codebases</title>
+    <title>IyanuAshiri  | Short Tutorial on Creating Python Virtual Environments</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -28,21 +28,16 @@
 
     
 
-    <meta property="og:title" content="Type Hints: Adding Types to Legacy Python Codebases" />
-<meta property="og:description" content="Type Hints: Adding Types to Legacy Codebases Introduction Python is an interpreted and dynamic language. This means Python code is executed at runtime and also doesn&rsquo;t make use of a type system when defining language constructs such as variables and functions.
-In Python 3.5, the typing module was introduced. This allows Python code to be gradually typed i.e Types can be added to some parts (variables, functions, classes etc.) of a codebase and checked at runtime (static typing) and some other parts (variables, functions etc." />
+    <meta property="og:title" content="Short Tutorial on Creating Python Virtual Environments" />
+<meta property="og:description" content="How to create and activate Python Virtual Environment using virtualenv" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://iyanuashiri.me/posts/adding-types-to-legacy-python-codebases/" />
+<meta property="og:url" content="https://iyanuashiri.me/posts/short-tutorial-on-creating-python-virtual-environments/" />
 
 
 
-<meta property="article:published_time" content="2019-02-14T09:45:57&#43;01:00"/>
+<meta property="article:published_time" content="2019-02-17T14:07:06&#43;01:00"/>
 
-<meta property="article:modified_time" content="2019-02-14T09:45:57&#43;01:00"/>
-
-
-
-
+<meta property="article:modified_time" content="2019-02-17T14:07:06&#43;01:00"/>
 
 
 
@@ -50,22 +45,24 @@ In Python 3.5, the typing module was introduced. This allows Python code to be g
 
 
 
-<meta itemprop="name" content="Type Hints: Adding Types to Legacy Python Codebases">
-<meta itemprop="description" content="Type Hints: Adding Types to Legacy Codebases Introduction Python is an interpreted and dynamic language. This means Python code is executed at runtime and also doesn&rsquo;t make use of a type system when defining language constructs such as variables and functions.
-In Python 3.5, the typing module was introduced. This allows Python code to be gradually typed i.e Types can be added to some parts (variables, functions, classes etc.) of a codebase and checked at runtime (static typing) and some other parts (variables, functions etc.">
 
 
-<meta itemprop="datePublished" content="2019-02-14T09:45:57&#43;01:00" />
-<meta itemprop="dateModified" content="2019-02-14T09:45:57&#43;01:00" />
-<meta itemprop="wordCount" content="1139">
+
+
+<meta itemprop="name" content="Short Tutorial on Creating Python Virtual Environments">
+<meta itemprop="description" content="How to create and activate Python Virtual Environment using virtualenv">
+
+
+<meta itemprop="datePublished" content="2019-02-17T14:07:06&#43;01:00" />
+<meta itemprop="dateModified" content="2019-02-17T14:07:06&#43;01:00" />
+<meta itemprop="wordCount" content="181">
 
 
 
 <meta itemprop="keywords" content="python," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Type Hints: Adding Types to Legacy Python Codebases"/>
-<meta name="twitter:description" content="Type Hints: Adding Types to Legacy Codebases Introduction Python is an interpreted and dynamic language. This means Python code is executed at runtime and also doesn&rsquo;t make use of a type system when defining language constructs such as variables and functions.
-In Python 3.5, the typing module was introduced. This allows Python code to be gradually typed i.e Types can be added to some parts (variables, functions, classes etc.) of a codebase and checked at runtime (static typing) and some other parts (variables, functions etc."/>
+<meta name="twitter:title" content="Short Tutorial on Creating Python Virtual Environments"/>
+<meta name="twitter:description" content="How to create and activate Python Virtual Environment using virtualenv"/>
 
   </head>
 
@@ -165,285 +162,75 @@ In Python 3.5, the typing module was introduced. This allows Python code to be g
           
         POSTS
       </p>
-      <h1 class="f1 athelas mb1">Type Hints: Adding Types to Legacy Python Codebases</h1>
+      <h1 class="f1 athelas mb1">Short Tutorial on Creating Python Virtual Environments</h1>
       
-      <time class="f6 mv4 dib tracked" datetime="2019-02-14T09:45:57&#43;01:00">February 14, 2019</time>      
+      <time class="f6 mv4 dib tracked" datetime="2019-02-17T14:07:06&#43;01:00">February 17, 2019</time>      
       
       
-        <span class="f6 mv4 dib tracked"> - 6 minutes read</span>
-        <span class="f6 mv4 dib tracked"> - 1139 words</span>
+        <span class="f6 mv4 dib tracked"> - 1 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 181 words</span>
       
     </header>
 
     <main class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
 
-<h1 id="type-hints-adding-types-to-legacy-codebases">Type Hints: Adding Types to Legacy Codebases</h1>
+<p>Before starting any Python project, it is highly recommended and best practice to create
+a virtual environment. The tool we use for creating virtual environments is called virtualenv.
+Virtualenv isolates your Python set-up on a per-project basis. This means
+that changes made to one Python project won’t affect another Python project.</p>
 
-<h2 id="introduction">Introduction</h2>
+<h2 id="setting-up-virtualenv">Setting up virtualenv</h2>
 
-<p>Python is an interpreted and dynamic language. This means Python code is executed at runtime and also
-doesn&rsquo;t make use of a type system when defining language constructs such as variables and functions.</p>
+<h3 id="on-a-windows-linux-or-os-x">On a Windows, Linux or OS X</h3>
 
-<p>In Python 3.5, the typing module was introduced. This allows Python code to be gradually typed i.e Types
-can be added to some parts (variables, functions, classes etc.) of a codebase and checked at runtime
-(static typing) and some other parts (variables, functions etc.) of the codebase don&rsquo;t contain types,
-hence type errors can appear at runtime (dynamic typing).</p>
-
-<h2 id="advantages-of-adding-types">Advantages of Adding Types</h2>
-
-<ol>
-<li>It enables the detection of many programming errors quickly, reliably and automatically.</li>
-<li>It provides ready-made documentation.</li>
-
-<li><p>It eliminates an entire category of bugs. Type errors at runtime are the most common errors
-encountered by Python developers.</p></li>
-
-<li><p>It reduces the number of unit tests. There will be no need to write tests that checks for the types
-of some code expressions.</p></li>
-</ol>
-
-<h2 id="gradual-typing-in-python">Gradual Typing in Python</h2>
-
-<p>Like it was stated earlier, gradual typing is a type system that gives you the option of either adding
-types or not. Some common examples of gradually typed languages are JavaScript(Typescript), etc. In
-Python, we gradually type our codebase using the typing module and  tools such as <a href="https://github.com/python/mypy">mypy</a>
-or <a href="https://pyre-check.org/">pyre</a> allow us to get the benefit of static typing when we run these tools on our codebase.</p>
-
-<p>Running a Python code that has been gradually typed doesn&rsquo;t automatically catch type errors, Python is
-still a dynamic language, but when we run tools like mypy or pyre on our code, they help catch type
-errors for parts of the code that have been typed.</p>
-
-<h2 id="getting-started-with-type-hints">Getting Started with Type Hints</h2>
-
-<h6 id="type-checking-variables">Type Checking Variables</h6>
-
-<pre><code>age: int = 5
-
-name: str = 'Iyanuoluwa'
+<pre><code class="language-commandline">mkdir example_project
+cd example_project
 </code></pre>
 
-<p>The first line shows the variable name <code>age</code> assigned to the value 5 which is an integer.</p>
+<p>The next step is to make our virtual environment. This will be called example_env. Make sure the
+ names you choose for your virtualenv is in lower case with no special characters and spaces.</p>
 
-<p>The second line shows the variable name <code>name</code> assigned to the value <code>Iyanuoluwa</code> which is a string</p>
-
-<h6 id="type-checking-functions">Type Checking Functions</h6>
-
-<pre><code>def multiply(num1: int, num2: int) -&gt; int:
-    return num1 * num2
+<pre><code class="language-commandline">python3 -m venv example_env
 </code></pre>
 
-<p>You can see the function parameters defines a type. The return value is also typed.</p>
+<h2 id="working-with-virtual-environment">Working with Virtual environment</h2>
 
-<h6 id="complex-data-types">Complex Data Types</h6>
+<h3 id="windows">Windows</h3>
 
-<pre><code>from typing import List
+<p>Enter the example_project directory</p>
 
-ages: List[int] = [18, 20, 34]
+<pre><code class="language-commandline">cd  example_project
 </code></pre>
 
-<p>For complex data types such as List, Dict, Tuple etc, we have to import them from the typing module.
-In this example, <code>ages</code> is assigned to a List of integers.</p>
+<p>Activate the virtual environment</p>
 
-<pre><code>from typing import Dict
-
-staff_ages: Dict[str: int] = {'iyanu': 23, 'ajao': 24}
+<pre><code class="language-commandline">example_env\Scripts\activate
 </code></pre>
 
-<p>In this example, <code>staff_ages</code> is assigned to a Dictionary with a <code>str</code> as Key and <code>int</code> as
-Value.</p>
+<h3 id="linux-and-os-x">Linux and OS X</h3>
 
-<pre><code>from typing import Tuple
+<p>Enter the example_project directory</p>
 
-data: Tuple[str, int, float] = ('iyanu', 64, 5.9)
+<pre><code class="language-commandline">cd example_project
 </code></pre>
 
-<p>A Tuple is an immutable data structure. You can&rsquo;t add new or change the values contained in the Tuple.
-So when you want to type a Tuple, you have to state the types for all the values that will be contained
-in the Tuple.</p>
+<p>Activate the virtual environment</p>
 
-<h6 id="creating-aliases">Creating Aliases</h6>
-
-<pre><code>from typing import Dict, List
-
-list_of_dicts: List[Dict[str: int]] = [{'iyanu': 10, 'ajao': 12}]
-
-ListOfDict = List[Dict[str: int]]
-
-list_of_dicts: ListOfDict = [{'iyanu': 10, 'ajao': 12}]
+<pre><code class="language-commandline">source example_env/bin/activate
 </code></pre>
 
-<p>You can create alias for complex data structures. You assign a name to the type of the complex data
-structure.</p>
+<p>You will know that you have virtualenv started when you see that the prompt in your console is
+prefixed with (example_env)</p>
 
-<h2 id="some-limitations-of-python-type-hints">Some Limitations of Python Type Hints</h2>
+<p>Then enter into the directory_env directory</p>
 
-<h3 id="first-limitation">First Limitation</h3>
-
-<pre><code>from typing import List
-
-ages: List[int] = [1, 2]
-
-ages.append('Iyanu')
+<pre><code class="language-commandline">cd example_env
 </code></pre>
 
-<p><code>mypy</code> static checker will complain when we try to add a string since the type is a List of integer.
-But a Python List is heterogeneous, hence it is normal for the List data type to contain both an
-integer and string.</p>
+<p>That&rsquo;s all!</p>
 
-<h3 id="first-workaround">First Workaround</h3>
-
-<pre><code>from typing import List, Union
-
-ages: List[Union[str, int]] = [1, 2]
-
-ages.append('Iyanu')
-</code></pre>
-
-<p>Now with the workaround, <code>mypy</code> won&rsquo;t complain because we now have a List of either a string or
-integer. That is what <code>Union</code> is for.</p>
-
-<h3 id="second-limitation">Second Limitation</h3>
-
-<pre><code>def get_id():
-    pass
-    
-def send_email(id: int):
-    pass
-    
-   
-id = get_id() # returns None
-
-send_email(id)
-</code></pre>
-
-<p>In the above example, the <code>get_id()</code> function is expected to return an integer as id but there are
-scenarios where <code>None</code> is returned. This means the <code>send_email()</code> function will accept a `<code>None</code>
-which will most likely cause an error.</p>
-
-<h3 id="second-workaround">Second Workaround</h3>
-
-<pre><code>from typing import Union
-
-
-def get_id() -&gt; Union[int, None]:
-    pass
-    
-def send_email(id: int):
-    pass
-    
-   
-id = get_id() # returns None
-
-send_email(id)
-</code></pre>
-
-<p>Just like the first workaround, we are making use <code>Union</code> again. This time the return value for
-<code>get_id()</code> function is either an integer or a None.</p>
-
-<p>Due to how common this limitation is, a special type was included in the typing module. It is called <code>Optional</code>.</p>
-
-<pre><code>from typing import Optional
-
-
-def get_id() -&gt; Optional[int]:
-    pass
-    
-def send_email(id: int):
-    pass
-    
-   
-id = get_id() # returns None
-
-send_email(id)
-</code></pre>
-
-<p>This means you can replace <code>Union[int, None]</code> with <code>Optional[int]</code>.</p>
-
-<h3 id="third-limitation">Third Limitation</h3>
-
-<pre><code>id: int
-
-id = 'i.8'
-</code></pre>
-
-<p>There are instances where a variable is defined to accept a particular say an integer, but along the
-line, you have to pass an integer that has been quoted. (A number that is in strings)</p>
-
-<h3 id="third-workaround-a">Third Workaround (a)</h3>
-
-<pre><code>id: int
-
-id: '1.8' # type: ignore
-</code></pre>
-
-<p>The first workaround is to use a comment like the one above. When mypy gets to this code, it ignores
-whatever is there</p>
-
-<h3 id="third-workaround-b">Third Workaround (b)</h3>
-
-<pre><code>def legacy_parser(text):
-    return data
-    
-    
-def legacy_parser(text: Any) -&gt; Any
-    return data
-</code></pre>
-
-<p>In this example, we have a function that accepts a text. The text can contain any combination of
-data type e.g integer, strings, floats etc. It can also return any combination of data type.</p>
-
-<p>Hence we type the function parameter and the return as <code>Any</code></p>
-
-<h2 id="adding-types-to-legacy-codebases">Adding Types To Legacy Codebases</h2>
-
-<p>At this juncture, we now know how to gradually type our existing codebases. We don&rsquo;t have to go all in.
-We can start with the critical parts that is always showing type errors and move to the parts that
-are less critical.</p>
-
-<p>There is also a way to automate this process. <a href="https://github.com/Instagram/MonkeyType">MonkeyType</a> is an open source tool developed at Instagram
-that adds type hints to our codebase. It collects runtime types of function arguments and return values.</p>
-
-<h2 id="how-to-use-monkeytype">How to use MonkeyType</h2>
-
-<p>For instance, we have a file called <code>add.py</code> we the following the <code>add</code> function defined in the
-file.</p>
-
-<pre><code>add.py
-
-def add(num1, num2):
-    return num1 + num2
-</code></pre>
-
-<p>We have another file called <code>calls_add.py</code>. This file calls the add function.</p>
-
-<pre><code>calls_add.py
-
-add(1, 2)
-</code></pre>
-
-<pre><code>monkeytype run calls_add.py
-
-monkeytype stub add.py
-
-monkeytype apply add.py
-</code></pre>
-
-<p>When you open the <code>add.py</code> file, you see the following.</p>
-
-<pre><code>add.py
-
-def add(num1:int, num2:int) -&gt; :
-    return num1 + num2
-</code></pre>
-
-<p>With MonkeyType, we can automate add types to our legacy codebases and fix the parts that MonkeyType
-didn&rsquo;t do a good job with.</p>
-
-<p>Finally, in order to greatly benefit from a gradual type system, it is best to use the type checker in
-your continuous integration.</p>
-
-<p>You can follow me on Twitter: <a href="https://www.twitter.com/iyanuashiri">@IyanuAshiri</a>
- and checkout my blog <a href="https://iyanuashiri.me">iyanuashiri.me</a> for more Python content.</p>
+<p>You can follow me on Twitter: <a href="https://www.twitter.com/iyanuashiri">@IyanuAshiri</a> and
+checkout my blog <a href="https://iyanuashiri.me">iyanuashiri.me</a> for more Python content.</p>
 <ul class="pa0">
   
    <li class="list">
@@ -476,43 +263,43 @@ ga('send', 'pageview');
 
 
         
-<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fiyanuashiri.me%2fposts%2fadding-types-to-legacy-python-codebases%2f" target="_blank" aria-label="Facebook">
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fiyanuashiri.me%2fposts%2fshort-tutorial-on-creating-python-virtual-environments%2f" target="_blank" aria-label="Facebook">
   <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     </div>Facebook</div>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=Type%20Hints%3a%20Adding%20Types%20to%20Legacy%20Python%20Codebases&amp;url=https%3a%2f%2fiyanuashiri.me%2fposts%2fadding-types-to-legacy-python-codebases%2f" target="_blank" aria-label="Twitter">
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=Short%20Tutorial%20on%20Creating%20Python%20Virtual%20Environments&amp;url=https%3a%2f%2fiyanuashiri.me%2fposts%2fshort-tutorial-on-creating-python-virtual-environments%2f" target="_blank" aria-label="Twitter">
   <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     </div>Twitter</div>
 </a>
 
 
-<a class="resp-sharing-button__link" href="mailto:?subject=Type%20Hints%3a%20Adding%20Types%20to%20Legacy%20Python%20Codebases&amp;body=https%3a%2f%2fiyanuashiri.me%2fposts%2fadding-types-to-legacy-python-codebases%2f" target="_self" aria-label="E-Mail">
+<a class="resp-sharing-button__link" href="mailto:?subject=Short%20Tutorial%20on%20Creating%20Python%20Virtual%20Environments&amp;body=https%3a%2f%2fiyanuashiri.me%2fposts%2fshort-tutorial-on-creating-python-virtual-environments%2f" target="_self" aria-label="E-Mail">
   <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     </div>E-Mail</div>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fiyanuashiri.me%2fposts%2fadding-types-to-legacy-python-codebases%2f&amp;title=Type%20Hints%3a%20Adding%20Types%20to%20Legacy%20Python%20Codebases&amp;summary=&amp;source=" target="_blank" aria-label="LinkedIn">
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fiyanuashiri.me%2fposts%2fshort-tutorial-on-creating-python-virtual-environments%2f&amp;title=Short%20Tutorial%20on%20Creating%20Python%20Virtual%20Environments&amp;summary=&amp;source=" target="_blank" aria-label="LinkedIn">
   <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     </div>LinkedIn</div>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https%3a%2f%2fiyanuashiri.me%2fposts%2fadding-types-to-legacy-python-codebases%2f" target="_blank" aria-label="Reddit">
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https%3a%2f%2fiyanuashiri.me%2fposts%2fshort-tutorial-on-creating-python-virtual-environments%2f" target="_blank" aria-label="Reddit">
   <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     </div>Reddit</div>
 </a>
 
 
-<a class="resp-sharing-button__link" href="whatsapp://send?text=https%3a%2f%2fiyanuashiri.me%2fposts%2fadding-types-to-legacy-python-codebases%2f" target="_blank" aria-label="WhatsApp">
+<a class="resp-sharing-button__link" href="whatsapp://send?text=https%3a%2f%2fiyanuashiri.me%2fposts%2fshort-tutorial-on-creating-python-virtual-environments%2f" target="_blank" aria-label="WhatsApp">
   <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     </div>WhatsApp</div>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fiyanuashiri.me%2fposts%2fadding-types-to-legacy-python-codebases%2f&amp;t=Type%20Hints%3a%20Adding%20Types%20to%20Legacy%20Python%20Codebases" target="_blank" aria-label="Hacker News">
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fiyanuashiri.me%2fposts%2fshort-tutorial-on-creating-python-virtual-environments%2f&amp;t=Short%20Tutorial%20on%20Creating%20Python%20Virtual%20Environments" target="_blank" aria-label="Hacker News">
   <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
       </div>Hacker News</div>
 </a>
@@ -549,6 +336,10 @@ ga('send', 'pageview');
     <p class="f5 b mb3">Related</p>
     <ul class="pa0 list">
 	   
+	     <li  class="mb2">
+          <a href="/posts/adding-types-to-legacy-python-codebases/">Type Hints: Adding Types to Legacy Python Codebases</a>
+        </li>
+	    
 	     <li  class="mb2">
           <a href="/posts/what-you-dont-know-python-variables/">What You Don&#39;t Know Python Variables</a>
         </li>

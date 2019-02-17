@@ -6,10 +6,20 @@
     <description>Recent content on IyanuAshiri</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 Feb 2019 10:49:34 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 17 Feb 2019 14:07:06 +0100</lastBuildDate>
     
 	<atom:link href="https://iyanuashiri.me/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Short Tutorial on Creating Python Virtual Environments</title>
+      <link>https://iyanuashiri.me/posts/short-tutorial-on-creating-python-virtual-environments/</link>
+      <pubDate>Sun, 17 Feb 2019 14:07:06 +0100</pubDate>
+      
+      <guid>https://iyanuashiri.me/posts/short-tutorial-on-creating-python-virtual-environments/</guid>
+      <description>Before starting any Python project, it is highly recommended and best practice to create a virtual environment. The tool we use for creating virtual environments is called virtualenv. Virtualenv isolates your Python set-up on a per-project basis. This means that changes made to one Python project won’t affect another Python project.
+Setting up virtualenv On a Windows, Linux or OS X mkdir example_project cd example_project  The next step is to make our virtual environment.</description>
+    </item>
     
     <item>
       <title>Subscribe</title>
