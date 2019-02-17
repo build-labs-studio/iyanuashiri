@@ -285,5 +285,5 @@ didn't do a good job with.
 Finally, in order to greatly benefit from a gradual type system, it is best to use the type checker in 
 your continuous integration. 
 
-You can follow me on Twitter: @IyanuAshiri and checkout my blog https://iyanuashiri.me for more
-Python content. 
+You can follow me on Twitter: [@IyanuAshiri](https://www.twitter.com/iyanuashiri)
+ and checkout my blog [iyanuashiri.me](https://iyanuashiri.me) for more Python content. 
