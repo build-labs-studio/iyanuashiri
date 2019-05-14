@@ -8,7 +8,7 @@ menu:
 ---
 
 
-# africastalking_USSD_demo
+## africastalking_USSD_demo
 How to build a USSD app using Python/Django
 
 [source](https://github.com/iyanuashiri/africastalking_USSD_demo)
@@ -16,7 +16,7 @@ How to build a USSD app using Python/Django
 Tools: Python/Django
 
 
-# calendar-plus
+## calendar-plus
 Calendar-plus is a simple library for creating HTML Calendar that includes query objects.
 
 [source](https://github.com/iyanuashiri/calendar-plus)
@@ -24,7 +24,7 @@ Calendar-plus is a simple library for creating HTML Calendar that includes query
 Tools: Python
 
 
-# close-browser-tab
+## close-browser-tab
 
 A browser extension that closes Twitter after some minutes
 
@@ -33,7 +33,7 @@ A browser extension that closes Twitter after some minutes
 Tools: JavaScript
 
 
-# compound-interest-calc
+## compound-interest-calc
 
 A compound interest calculator
 
@@ -42,34 +42,34 @@ A compound interest calculator
 Tools: JavaScript/Vuejs, Bootstrap, Netlify
 
 
-# doodle-docs-vue
+## doodle-docs-vue
 
 In-browser, real-time, collaborative WYSIWYG rich text editor for word documents.
 
-[source](https://github.com/iyanuashiri/doodle-docs-vue), [check it out]()
+[source](https://github.com/iyanuashiri/doodle-docs-vue)
 
 Tools: JavaScript/Vuejs, HTML5, Bootstrap, Netlify
 
 
-# doodle-docs
+## doodle-docs
 
 In-browser, real-time, collaborative WYSIWYG rich text editor for word documents.
 
-[source](https://github.com/iyanuashiri/doodle-docs), [check it out]()
+[source](https://github.com/iyanuashiri/doodle-docs)
 
 Tools: Python/Django, Django REST Framework, PostgreSQL, Heroku
 
 
-# meethub
+## meethub
 
 An events management system
 
-[source](https://github.com/iyanuashiri/meethub), [check it out]()
+[source](https://github.com/iyanuashiri/meethub)
 
 Tools: Python/Django, HTML5, CSS3, PostgreSQL, Heroku
 
 
-# store
+## store
 A tool to store terminal commands and create a backup on Google drive.
 
 [source](https://github.com/iyanuashiri/store)
@@ -77,7 +77,7 @@ A tool to store terminal commands and create a backup on Google drive.
 Tools: Python
 
 
-# Tweet-Bot
+## Tweet-Bot
 A bot that tweets inspiring quotes on Twitter.
 
 [source](https://github.com/iyanuashiri/Tweet-Bot)
@@ -85,7 +85,7 @@ A bot that tweets inspiring quotes on Twitter.
 Tools: Python
 
 
-# twilio-sms-action
+## twilio-sms-action
 
 A GitHub action for Twilio SMS API
 
@@ -94,15 +94,15 @@ A GitHub action for Twilio SMS API
 Tools: Shell script
 
 
-# twitter-as-a-blog
+## twitter-as-a-blog
 Twitter as a blog. A tool for creating a blog from Twitter threads 
 
-[source](https://github.com/iyanuashiri/Twitter-as-a-blog), [check it out]()
+[source](https://github.com/iyanuashiri/Twitter-as-a-blog)
 
 Tools: Python/Django, HTML5, CSS3, PostgreSQL, Heroku
 
 
-# wikipedia-reference-scraper
+## wikipedia-reference-scraper
 
 Wikipedia API wrapper for references
 
