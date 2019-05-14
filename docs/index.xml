@@ -6,10 +6,31 @@
     <description>Recent content on IyanuAshiri</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Feb 2019 14:07:06 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 19 Feb 2019 14:18:49 +0100</lastBuildDate>
     
 	<atom:link href="https://iyanuashiri.me/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Projects</title>
+      <link>https://iyanuashiri.me/projects/</link>
+      <pubDate>Tue, 19 Feb 2019 14:18:49 +0100</pubDate>
+      
+      <guid>https://iyanuashiri.me/projects/</guid>
+      <description>africastalking_USSD_demo How to build a USSD app using Python/Django
+source
+Tools: Python/Django
+calendar-plus Calendar-plus is a simple library for creating HTML Calendar that includes query objects.
+source
+Tools: Python
+close-browser-tab A browser extension that closes Twitter after some minutes
+source, check it out
+Tools: JavaScript
+compound-interest-calc A compound interest calculator
+source, check it out
+Tools: JavaScript/Vuejs, Bootstrap, Netlify
+doodle-docs-vue In-browser, real-time, collaborative WYSIWYG rich text editor for word documents.</description>
+    </item>
     
     <item>
       <title>Short Tutorial on Creating Python Virtual Environments</title>
